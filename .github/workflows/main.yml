@@ -1,0 +1,25 @@
+name: test-build
+env:
+  NAME: 'TESTingNAME'
+  env_var: ${{ vars.ENV_CONTEXT_VAR }}
+
+on:
+  pull_request:
+    paths:
+      - '/**'
+  push:
+    branches:
+      - 'master'
+    paths:
+      - '/**'
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Name
+        id: get-name
+        working-directory: /
+        run: |
+          echo ""
+          echo ""
+          echo "Hello $NAME. ${{ vars.JOB_NAME }}"
