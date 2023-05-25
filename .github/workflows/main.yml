@@ -2,7 +2,6 @@ name: test-build
 env:
   NAME: 'TESTingNAME'
   env_var: ${{ vars.ENV_CONTEXT_VAR }}
-
 on:
   pull_request:
     paths:
@@ -12,6 +11,9 @@ on:
       - 'master'
     paths:
       - '/**'
+  workflow_dispatch:
+  pull_request:
+    types: [opened, reopened]
 jobs:
   deploy:
     runs-on: ubuntu-latest
