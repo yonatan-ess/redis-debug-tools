@@ -22,3 +22,5 @@ jobs:
           echo ""
           echo ""
           echo "Hello $NAME. ${{ vars.JOB_NAME }}"
+          echo "${{github.run-name}}"
+          echo "${{github.ref}}"
