@@ -27,4 +27,4 @@ jobs:
           echo "${{github.ref}}"
           echo "${{env.NAME}}"
           echo "${{env.env_var}}"
-          echo "${{github}}""
+          echo "${{github}}"
